@@ -1,21 +1,30 @@
+<!--
+ * @Author: Kilims Ye
+ * @Date: 2021-02-09 09:41:17
+ * @LastEditTime: 2021-02-09 16:03:52
+ * @LastEditors: Kilims Ye
+ * @Description: 
+ * @FilePath: /my-app/public/index.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="description" content="Web site created using create-react-app" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, maximum-scale=1.0,
+    viewport-fit=cover"
+        />
+        <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+        <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -24,12 +33,79 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+        <title>Kilims TypeScript 脚手架</title>
+    </head>
+    <style>
+        #root > #preLoader {
+            width: 100%;
+            text-align: center;
+            /* padding-top: 15rem;
+        font-size: 2rem; */
+            padding-top: 140px;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        #root > #preLoader > div > span#first {
+            /*设置渐变背景，最好设置为能无缝拼接的渐变*/
+            background-image: -webkit-linear-gradient(left, red, white 12.5%, red 25%, white 37.5%, red 50%, red 100%);
+            /*文字填充色为透明*/
+            -webkit-text-fill-color: transparent;
+            /*背景剪裁为文字，相当于用背景填充文字*/
+            -webkit-background-clip: text;
+            background-clip: text;
+            /*将背景拉长一倍，给予移动变化空间，用作流光效果*/
+            -webkit-background-size: 400% 100%;
+            background-size: 400% 100%;
+            -webkit-animation: light 2s infinite linear;
+            animation: light 2s infinite linear;
+        }
+        #root > #preLoader > div > span#second {
+            /*设置渐变背景，最好设置为能无缝拼接的渐变*/
+            background-image: -webkit-linear-gradient(
+                left,
+                black,
+                black 50%,
+                white 62.5%,
+                black 75%,
+                white 87.5%,
+                black 100%
+            );
+            /*文字填充色为透明*/
+            -webkit-text-fill-color: transparent;
+            /*背景剪裁为文字，相当于用背景填充文字*/
+            -webkit-background-clip: text;
+            background-clip: text;
+            /*将背景拉长一倍，给予移动变化空间，用作流光效果*/
+            -webkit-background-size: 800% 100%;
+            background-size: 800% 100%;
+            -webkit-animation: light 2s infinite linear;
+            animation: light 2s infinite linear;
+        }
+        @keyframes light {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -100% 0;
+            }
+        }
+    </style>
+    <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root">
+            <div id="preLoader">
+                <div>
+                    <span id="first">TypeScript</span>
+                    <span id="second">
+                        <script>
+                            // var pathArr = window.location.pathname.split("/");
+                            document.getElementById('second').innerHTML = '脚手架';
+                        </script>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -38,6 +114,5 @@
 
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    --></body>
 </html>

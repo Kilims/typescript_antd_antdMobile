@@ -1,9 +1,8 @@
 {
     "compilerOptions": {
-        "baseUrl": "src",
         "target": "es5",
         "lib": ["dom", "dom.iterable", "esnext"],
-        "allowJs": false,
+        "allowJs": true,
         "skipLibCheck": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
@@ -21,9 +20,20 @@
         "noEmit": true,
         "isolatedModules": true,
         "noFallthroughCasesInSwitch": true,
-        "jsx": "react-jsx"
+        "jsx": "react-jsx",
+        "baseUrl": "./"
     },
+    "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+    },
+    "overrides": [
+        {
+            "files": ["*.ts", "*.tsx"],
+            "rules": {
+                "@typescript-eslint/explicit-module-boundary-types": ["error"]
+            }
+        }
+    ],
     "include": ["src/**/*"],
-    "exclude": ["node_modules", "build"],
-    "extends": "./base-tsconfig.json"
+    "exclude": ["node_modules", "build"]
 }
